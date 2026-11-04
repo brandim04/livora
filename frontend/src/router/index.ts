@@ -1,4 +1,3 @@
-
 import { createRouter, createWebHistory } from 'vue-router'
 
 import HomeView from '../views/HomeView.vue'
@@ -30,8 +29,11 @@ const routes = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
-  routes
+  history: createWebHistory('/livora/'),
+  routes,
+  scrollBehavior() {
+    return { top: 0 }
+  }
 })
 
 export default router
